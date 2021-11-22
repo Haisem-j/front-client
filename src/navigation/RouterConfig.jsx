@@ -12,8 +12,10 @@ export const RouterConfig = () => {
     return (
         <>
             <Switch>
-                <Route exact path='/' component={Dashboard} />
-                <Route exact path='/landing' component={LandingPage} />
+                <Route exact path='/' component={LandingPage} />
+                <Route path='/dashboard' >
+                    <Dashboard />
+                </Route>
                 <Route path='/login'>
                     <Login />
                 </Route>

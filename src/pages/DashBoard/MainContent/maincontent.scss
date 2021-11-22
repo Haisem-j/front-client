@@ -1,0 +1,28 @@
+.header{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fff
+}
+
+.header-icon{
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.main-content-container{
+    padding: 50px;
+}
+
+.content-text{
+    font-size: 1rem;
+}
+
+.content-card{
+    width: 90%;
+    border-radius: 10px;
+}
+
+.card-income{
+    font-size: 1.5rem;
+}

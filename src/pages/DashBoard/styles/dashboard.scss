@@ -1,5 +1,9 @@
-.dashboard-container{
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
+.maincontent-container{
+    border: solid black 0.5px;
+    width: 87%;
+    background-color: #F7F9FC;
+}
+
+.maincontent-chart-container{
+    height: 15%;
 }
