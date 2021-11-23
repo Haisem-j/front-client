@@ -9,6 +9,7 @@ import { Layout } from 'antd'
 
 import './styles/dashboard.scss'
 import { useRouteMatch } from 'react-router-dom';
+import { NotFound } from 'navigation/NotFound';
 
 export const Dashboard = () => {
     const { path } = useRouteMatch()
@@ -19,6 +20,7 @@ export const Dashboard = () => {
             <Switch>
                 <Route exact path={path} component={MainContent} />
                 <Route exact path={`${path}/recipes`} component={Recipes} />
+                <Route path='*' component={NotFound}/>
             </Switch>
         </Layout>
     )

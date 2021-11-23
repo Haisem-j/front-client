@@ -2,17 +2,32 @@ import React, { useState } from 'react';
 import './sidebar.scss'
 import { Layout, Menu } from 'antd';
 import { PieChartOutlined, FolderOutlined, ShoppingCartOutlined, UserOutlined, ShopOutlined, PoweroffOutlined } from '@ant-design/icons'
-import { Link } from 'react-router-dom';
-import { useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch, useHistory } from 'react-router-dom';
+import { useAuth } from 'context/AuthContext';
+
 const { Sider } = Layout
 
 const SideBar = () => {
     const [collapsed, setCollapsed] = useState(false)
     const { path } = useRouteMatch()
-    console.log(path);
+    const { logout } = useAuth()
+    const history = useHistory()
+
+
+    const handleLogout = async ()  => {
+        try {
+            await logout()
+            history.push("/login")
+        } catch {
+            console.log("Failed to log out")
+        }
+    }
+
     return (
         <Sider collapsible collapsed={collapsed} onCollapse={setCollapsed} >
-            <div className="sidebar-logo"></div>
+            <Link to="/">
+                <div className="sidebar-logo"></div>
+            </Link>
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                 <Menu.Item key="1" icon={<PieChartOutlined />}>
                     <Link to={`${path}`}>
@@ -44,7 +59,7 @@ const SideBar = () => {
                         Profile
                     </Link>
                 </Menu.Item>
-                <Menu.Item key="7" icon={<PoweroffOutlined />}>
+                <Menu.Item key="7" icon={<PoweroffOutlined />} onClick={handleLogout}>
                     Logout
                 </Menu.Item>
             </Menu>

@@ -3,28 +3,19 @@ import { Switch, Route } from "react-router-dom";
 
 import { Dashboard } from "pages/DashBoard";
 import { LandingPage } from "pages/LandingPage";
-import { Login } from 'navigation/AuthRoutes/Login'
-import { AUTH_PAGE1 } from "./CONSTANTS";
-import { PrivateRoute } from "./AuthRoutes/PrivateRoute";
+import PrivateRoute  from "./AuthRoutes/PrivateRoute";
 import { NotFound } from "./NotFound";
-
+import SignUp from "./AuthRoutes/Signup";
+import Login from "./AuthRoutes/Login";
 export const RouterConfig = () => {
     return (
         <>
             <Switch>
                 <Route exact path='/' component={LandingPage} />
-                <Route path='/dashboard' >
-                    <Dashboard />
-                </Route>
-                <Route path='/login'>
-                    <Login />
-                </Route>
-
-                <PrivateRoute path={AUTH_PAGE1}>
-                        {/* Protected routes go here */}
-                </PrivateRoute>
-
-                <Route path='*' component={NotFound}/>
+                <Route exact path="/signup" component={SignUp} />
+                <Route exact path="/login" component={Login} />
+                <PrivateRoute path='/dashboard' component={Dashboard} />
+                <Route path='*' component={NotFound} />
             </Switch>
         </>
     )

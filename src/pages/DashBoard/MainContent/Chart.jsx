@@ -3,6 +3,14 @@ import { Line } from '@ant-design/charts';
 
 import { chartData } from 'dummydata.js';
 
+/**
+ * Data obj should look like this
+ *  {
+        Date: "2010-01",
+        sales: 20
+    }
+ */
+
 const Chart = () => {
     const [data, setData] = useState([]);
 
@@ -19,7 +27,6 @@ const Chart = () => {
         xField: 'Date',
         yField: 'sales',
         xAxis: {
-            // type: 'timeCat',
             tickCount: 5,
         },
     };
