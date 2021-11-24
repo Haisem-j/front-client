@@ -3,17 +3,14 @@ import Chart from './Chart'
 
 import './maincontent.scss'
 
-import { Layout, Row, Col, Button, Divider, Card, Tag, Typography } from 'antd';
-import { useAuth } from 'context/AuthContext';
+import { Layout, Row, Col, Divider, Card, Tag, Typography, DatePicker } from 'antd';
 
 const { Title, Text } = Typography;
 const { Content } = Layout
 
 const MainContent = () => {
-    const {currentUser} = useAuth()
     return (
         <Layout>
-            {currentUser.email}
             <Content className="main-content-container">
                 <Row>
                     <Col span={12}>
@@ -21,7 +18,9 @@ const MainContent = () => {
                         <Text className="content-text">Welcome back, Lucy! We've missed you. 👋</Text>
                     </Col>
                     <Col span={12} className="flex-end">
-                        <Button type="primary">Today: Nov 22</Button>
+                        <div>
+                            <DatePicker />
+                        </div>
                     </Col>
                 </Row>
                 <Divider />

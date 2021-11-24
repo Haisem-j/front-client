@@ -1,55 +1,50 @@
 import React from 'react';
 import { List, Avatar, Layout, Row, Col, Typography, Divider, Button } from 'antd';
 import { EditOutlined, CloseCircleOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
-import { useRouteMatch } from 'react-router-dom';
 
 const { Content } = Layout;
 const { Title } = Typography;
 
 const data = [
     {
-        title: 'Bacon Egg And Cheese',
+        title: 'Best Breakfast Ideas',
     },
     {
-        title: 'Lasagne with Spinach',
+        title: 'Nutrional Recipes',
     },
     {
-        title: 'Hamburger and Fries',
+        title: 'Date Night Recipes',
     },
     {
-        title: 'Rice and Noodles',
+        title: 'Quick Snack Ideas',
     },
 ];
-const Recipes = () => {
-    const { path } = useRouteMatch()
+const Programs = () => {
     return (
         <Layout>
             <Content className="main-content-container">
                 <Row>
                     <Col span={24}>
-                        <Title level={3}>My Recipes</Title>
+                        <Title level={3}>My Programs</Title>
                         <Divider />
                     </Col>
                 </Row>
                 <Row>
                     <Col span={24}>
-                        <Link to={`${path}/newrecipe`}>
-                            <Button type="primary" style={{ marginBottom: '20px' }}>Create New Recipe</Button>
-                        </Link>
+                        <Button type="primary" style={{marginBottom: '20px'}}>Create New Program</Button>
                     </Col>
                 </Row>
                 <Row>
                     <Col span={24}>
                         <List
                             style={{ backgroundColor: 'white' }}
-                            header={<Title level={5}>All Recipes</Title>}
+                            header={<Title level={5}>All Programs</Title>}
                             bordered
                             itemLayout="horizontal"
                             dataSource={data}
                             renderItem={item => (
                                 <List.Item style={{ backgroundColor: 'white', padding: '25px', cursor: 'pointer' }}
-                                    actions={[<EditOutlined />, <CloseCircleOutlined />]}
+                                actions={[<EditOutlined />, <CloseCircleOutlined />]}
                                 >
                                     <List.Item.Meta
                                         avatar={<Avatar src="https://joeschmoe.io/api/v1/random" size={74} shape="square" />}
@@ -66,5 +61,5 @@ const Recipes = () => {
     )
 }
 
-export default Recipes
+export default Programs
 
