@@ -3,7 +3,7 @@ import React from 'react'
 export const LandingPage = () =>{
     return(
         <>
-            Landing page here
+            Landing page here test
         </>
     )
 }
