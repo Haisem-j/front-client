@@ -47,6 +47,14 @@ const Recipes = () => {
                             bordered
                             itemLayout="horizontal"
                             dataSource={data}
+                            locale={
+                                { emptyText: (
+                                    <>
+                                    <h1>Somethign</h1>
+                                    <Button type="primary">Click</Button>
+                                    </>
+                                ) }
+                            }
                             renderItem={item => (
                                 <List.Item style={{ backgroundColor: 'white', padding: '25px', cursor: 'pointer' }}
                                     actions={[<EditOutlined />, <CloseCircleOutlined />]}

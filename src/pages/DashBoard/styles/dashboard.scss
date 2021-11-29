@@ -7,3 +7,13 @@
 .maincontent-chart-container{
     height: 15%;
 }
+
+.instruction-right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.instruction-icon{
+    cursor: pointer;
+}

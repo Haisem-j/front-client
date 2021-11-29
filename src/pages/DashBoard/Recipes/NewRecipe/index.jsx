@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+
 import UploadPicture from '../UploadPicture';
+import RecipeInstructions from './RecipeInstructions';
+
 import { Layout, Row, Col, Typography, Divider, Form, Card, Input, Button } from 'antd';
+import { MenuOutlined, CloseOutlined, CheckOutlined } from '@ant-design/icons'
 
 const { Content } = Layout;
 const { Title, Text } = Typography;
@@ -27,6 +31,7 @@ export default function NewRecipe() {
         console.log('HANDLE DAT');
         console.log(values);
     }
+
     return (
         <Layout>
             <Content className="main-content-container">
@@ -74,13 +79,25 @@ export default function NewRecipe() {
                                 <Title level={5}>Video URL</Title>
 
                                 <Text type="secondary" >Add a YouTube video, Vimeo link, Instagram post/reel, or TikTok to your resource. Copy and paste the link below.</Text>
-                                    <div className="" style={{ marginBottom: '20px' }} />
+                                <div className="" style={{ marginBottom: '20px' }} />
                                 <Form.Item
                                     name="videoLink"
                                 >
                                     <Input placeholder="https://..." />
                                 </Form.Item>
                                 <Divider />
+
+                                <Title level={5}>Instructions</Title>
+
+                                <Text type="secondary" >Add step by step instructions on how your readers should follow the recipe.</Text>
+                                <div className="" style={{ marginBottom: '20px' }} />
+                                <Form.Item
+                                    name="instructions"
+                                >
+                                    <RecipeInstructions />
+                                </Form.Item>
+                                <Divider />
+
                                 <Form.Item>
                                     <Button type="primary" htmlType="submit" block>
                                         Submit

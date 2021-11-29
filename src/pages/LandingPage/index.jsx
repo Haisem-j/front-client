@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-export const LandingPage = () =>{
-    return(
+import { Button } from 'antd';
+
+export const LandingPage = () => {
+    return (
         <>
-            Landing page here test
+            <Link to="/dashboard"> <Button type="primary">Dashboard</Button></Link>
         </>
     )
 }
